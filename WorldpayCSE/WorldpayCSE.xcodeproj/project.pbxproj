@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4A111211A71CB60149AD4601 /* libPods-WorldpayCSETests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56EC649C909BAFE2F4B329E1 /* libPods-WorldpayCSETests.a */; };
+		6051F88A2CB6632700709BC3 /* OpenSSL in Frameworks */ = {isa = PBXBuildFile; productRef = 6051F8892CB6632700709BC3 /* OpenSSL */; };
 		769D8AEE1D22D918009B0AB6 /* WorldpayCSE.h in Headers */ = {isa = PBXBuildFile; fileRef = 769D8AED1D22D918009B0AB6 /* WorldpayCSE.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		769D8AF51D22D918009B0AB6 /* WorldpayCSE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 769D8AEA1D22D918009B0AB6 /* WorldpayCSE.framework */; };
 		769D8AFA1D22D918009B0AB6 /* WorldpayCSETests.m in Sources */ = {isa = PBXBuildFile; fileRef = 769D8AF91D22D918009B0AB6 /* WorldpayCSETests.m */; };
@@ -152,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5F4B0B679C62D418961A063 /* libPods-WorldpayCSE.a in Frameworks */,
+				6051F88A2CB6632700709BC3 /* OpenSSL in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +393,9 @@
 			dependencies = (
 			);
 			name = WorldpayCSE;
+			packageProductDependencies = (
+				6051F8892CB6632700709BC3 /* OpenSSL */,
+			);
 			productName = WorldpayCSE;
 			productReference = 769D8AEA1D22D918009B0AB6 /* WorldpayCSE.framework */;
 			productType = "com.apple.product-type.framework";
@@ -438,9 +443,13 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 769D8AE01D22D918009B0AB6;
+			packageReferences = (
+				6051F8882CB6632700709BC3 /* XCRemoteSwiftPackageReference "OpenSSL" */,
+			);
 			productRefGroup = 769D8AEB1D22D918009B0AB6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -632,7 +641,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Thirdparty/OpenSSL/";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -651,10 +660,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"-framework",
-					openssl,
-				);
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -686,7 +692,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Thirdparty/OpenSSL/";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -698,10 +704,7 @@
 				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = (
-					"-framework",
-					openssl,
-				);
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -722,7 +725,11 @@
 				INFOPLIST_FILE = WorldpayCSE/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.worldpay.WorldpayCSE;
@@ -743,7 +750,11 @@
 				INFOPLIST_FILE = WorldpayCSE/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.worldpay.WorldpayCSE;
@@ -757,7 +768,11 @@
 			baseConfigurationReference = 7E2895A37C63E0A5F3508AB3 /* Pods-WorldpayCSETests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = WorldpayCSETests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.worldpay.WorldpayCSETests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -768,7 +783,11 @@
 			baseConfigurationReference = CEAA4B525B188995F670094C /* Pods-WorldpayCSETests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = WorldpayCSETests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.worldpay.WorldpayCSETests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -805,6 +824,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6051F8882CB6632700709BC3 /* XCRemoteSwiftPackageReference "OpenSSL" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzyzanowskim/OpenSSL.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.3.2000;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6051F8892CB6632700709BC3 /* OpenSSL */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6051F8882CB6632700709BC3 /* XCRemoteSwiftPackageReference "OpenSSL" */;
+			productName = OpenSSL;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 769D8AE11D22D918009B0AB6 /* Project object */;
 }
